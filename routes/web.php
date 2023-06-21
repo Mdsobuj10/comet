@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//admin auth route
+
+Route::get('/admin/login', [AdminAuthController::class, 'LoginPage']) -> name('admin.login.page');
+Route::post('/admin-login', [AdminAuthController::class, 'Login']) -> name('admin.login');
+
+//admin page route
+Route::get('/deshboard', [AdminPageController::class, 'DeshboardShow']) -> name('admin.deshboard.page');
