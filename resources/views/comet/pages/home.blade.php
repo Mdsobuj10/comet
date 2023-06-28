@@ -1,0 +1,1 @@
+@extends('comet.layouts.app')

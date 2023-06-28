@@ -5,7 +5,7 @@
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Doccure - Dashboard</title>
+        <title>Commet - {{Auth::guard('admin') -> user() -> name}}</title>
 		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin/assets/img/favicon.png')}}">
@@ -23,6 +23,7 @@
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
+		<link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
 		
 		<!--[if lt IE 9]>
 			<script src="admin/assets/js/html5shiv.min.js"></script>
@@ -37,11 +38,21 @@
             @include('admin.layouts.header')
             @include('admin.layouts.sidebar')
 			
-		
+			<div class="page-wrapper">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-sm-12">
+							<h3 class="page-title">Welcom {{Auth::guard('admin') -> user() -> name}} </h3>
+							<ul class="breadcrumb">
+								<li class="breadcrumb-item active">Dashboard</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			
-		   @section('main')
-           @show
-		
+					@section('main')
+					@show
+			</div>
         </div>
 		<!-- /Main Wrapper -->
 		
@@ -61,6 +72,9 @@
 		
 		<!-- Custom JS -->
 		<script  src="{{asset('admin/assets/js/script.js')}}"></script>
+		<script  src="{{asset('custom.js')}}"></script>
+	    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+		
 		
     </body>
 

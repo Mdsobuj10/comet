@@ -3,7 +3,7 @@
 
 @section('main')
     	<!-- Page Wrapper -->
-        <div class="page-wrapper">
+       
 			
             <div class="content container-fluid">
                 
