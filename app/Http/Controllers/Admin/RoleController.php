@@ -40,7 +40,7 @@ class RoleController extends Controller
     {
         //role data validate 
         $this -> validate($request, [
-            'name'   =>['required'],
+            'name'   =>['required', 'unique:roles'],
         ]);
         //role data created
         Role::create([
@@ -84,6 +84,9 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $this -> validate($request, [
+            'name'   =>['required'],
+        ]);
         //role data update 
         $update_data = Role::findOrFail($id);
         $update_data -> update([

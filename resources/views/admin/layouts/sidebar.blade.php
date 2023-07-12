@@ -11,17 +11,17 @@
                     </li>
                     @if (in_array('Slider', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
                     <li class=""> 
-                        <a href="#"><i class="fe fe-home"></i> <span>Slider</span></a>
+                        <a href="{{route('slider.index')}}"><i class="fe fe-home"></i> <span>Slider</span></a>
                     </li>
                     @endif
                     @if (in_array('Testimonials', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
                     <li class=""> 
-                        <a href="#"><i class="fe fe-home"></i> <span>Testimonials</span></a>
+                        <a href="{{route('testimonial.index')}}"><i class="fe fe-home"></i> <span>Testimonials</span></a>
                     </li>
                     @endif
-                    @if (in_array('Our Clint', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
+                    @if (in_array('Our Client', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
                     <li class=""> 
-                        <a href="#"><i class="fe fe-home"></i> <span>Our Client</span></a>
+                        <a href="{{route('client.index')}}"><i class="fe fe-home"></i> <span>Our Client</span></a>
                     </li>
                     @endif
                     @if (in_array('Portflio', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  

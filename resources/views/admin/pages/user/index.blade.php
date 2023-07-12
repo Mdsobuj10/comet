@@ -34,10 +34,10 @@
                                 <tr>
                                     <td>{{$loop -> index + 1}}</td>
                                     <td>{{$item-> name}}</td>
-                                    <td>{{$item -> role -> name}}</td>
+                                    
                                     <td>
                                         @if  ($item -> photo == 'avator.png' )
-                                            <img  style="width: 60px; height: 60px;object-fit: cover;" src="{{url('storage/admins/download.jfif')}}" alt="">
+                                            <img  style="width: 60px; height: 60px;object-fit: cover;" src="{{url('storage/admins/avator.png')}}" alt="">
                                         @endif
                                       
                                     </td>

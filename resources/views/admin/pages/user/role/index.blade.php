@@ -78,6 +78,7 @@
             <div class="card-header">
                 <h4 class="card-title">Add New role</h4>
                 @include('validation')
+                @include('error')
             </div>
             <div class="card-body">
                 <form action="{{route('role.store')}}" method="POST">
@@ -113,6 +114,7 @@
                 <a class="btn btn-sm d-inline btn-primary" href="{{route('role.index')}}"> back</a>
             </div>
             @include('validation')
+            @include('error')
             <div class="card-body">
                 <form action="{{route('role.update', $edite -> id)}}" method="POST">
                     @csrf

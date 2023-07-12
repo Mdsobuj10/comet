@@ -1,12 +1,17 @@
 <?php
 
 use App\Models\Admin;
+use App\Models\Slider;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ClientsController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Frontend\FrontendPagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +48,18 @@ Route::group(['middleware' => 'admin'], function(){
     Route::get('/status/update/{id}', [AdminController::class, 'StatusUpdate']) -> name('admin.status.update');
     Route::get('/trash/update/{id}', [AdminController::class, 'TrashUpdate']) -> name('admin.trash.update');
     Route::get('/trash/admin', [AdminController::class, 'UserTrash']) -> name('admin.trash');
+    
+    //slider resource  route 
+    Route::resource('/slider', SliderController::class);
+    Route::get('slider/status/update/{id}', [SliderController::class, 'StatusUpdateSlider']) -> name('slider.status.update');
+    //testimonials resource route
+    Route::resource('/testimonial', TestimonialController::class);
+    Route::get('testimonia/status/update/{id}', [TestimonialController::class, 'StatusUpdatetesTimonial']) -> name('testimonial.status.update');
+    //clients route 
+    Route::resource('/client', ClientsController::class);
+    Route::get('client/status/update/{id}', [ClientsController::class, 'StatusUpdatetesClient']) -> name('client.status.update');
 
 });
 
-Route::get('/' , function (){
-    return view('comet.pages.home');
-});
+//frontend page controllers 
+Route::get('/', [FrontendPagesController::class, 'HomePages']) -> name('home.page');
