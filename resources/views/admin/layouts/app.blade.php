@@ -1,3 +1,4 @@
+{{-- <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}"> --}}
 <!DOCTYPE html>
 <html lang="en">
     
@@ -23,35 +24,39 @@
 		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="{{asset('admin/assets/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('admin/assets/icon/themify-icons.css')}}">
+		
+		
 		<link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
 		
 		<!--[if lt IE 9]>
 			<script src="admin/assets/js/html5shiv.min.js"></script>
 			<script src="admin/assets/js/respond.min.js"></script>
-		<![endif]-->
-    </head>
-    <body>
-	
-		<!-- Main Wrapper -->
-        <div class="main-wrapper">
-		
-            @include('admin.layouts.header')
-            @include('admin.layouts.sidebar')
+			<![endif]-->
+		</head>
+		<body>
 			
-			<div class="page-wrapper">
-				<div class="page-header">
-					<div class="row">
-						<div class="col-sm-12">
-							<h3 class="page-title">Welcom {{Auth::guard('admin') -> user() -> name}} </h3>
-							<ul class="breadcrumb">
-								<li class="breadcrumb-item active">Dashboard</li>
-							</ul>
-						</div>
+			<!-- Main Wrapper -->
+			<div class="main-wrapper">
+				
+				@include('admin.layouts.header')
+				@include('admin.layouts.sidebar')
+				
+				<div class="page-wrapper">
+					<div class="page-header">
+						<div class="row">
+							<div class="col-sm-12">
+								<h3 class="page-title">Welcom {{Auth::guard('admin') -> user() -> name}} </h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item active">Dashboard</li>
+								</ul>
+							</div>
 					</div>
 				</div>
-			
-					@section('main')
-					@show
+				
+				@section('main')
+				@show
+				
 			</div>
         </div>
 		<!-- /Main Wrapper -->
@@ -69,7 +74,8 @@
 		<script src="{{asset('admin/assets/plugins/raphael/raphael.min.js')}}"></script>    
 		<script src="{{asset('admin/assets/plugins/morris/morris.min.js')}}"></script>  
 		<script src="{{asset('admin/assets/js/chart.morris.js')}}"></script>
-		
+		<script src="{{asset('admin/assets/ckeditor/ckeditor.js')}}"></script>
+		{{-- <script src="//cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script> --}}
 		<!-- Custom JS -->
 		<script  src="{{asset('admin/assets/js/script.js')}}"></script>
 		<script  src="{{asset('custom.js')}}"></script>

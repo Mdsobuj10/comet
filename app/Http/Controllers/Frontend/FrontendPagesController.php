@@ -14,4 +14,11 @@ class FrontendPagesController extends Controller
     {
          return view('comet.pages.home');
     }
+      /**
+     * home pagess show 
+    */
+    public function ContactPages()
+    {
+         return view('comet.pages.contact');
+    }
 }

@@ -4147,4 +4147,21 @@ table.table-inbox tbody tr.checked {
 	height: 60px;
 	object-fit: cover;
 }
+.preview-icon{
+	cursor: pointer;
+}
+
+.gellay-image{
+	display: flex;
+	flex-flow: wrap;
+	justify-content: space-between;
+	gap: 5px;
+	
+}
+.gellay-image img{
+	width: 165px;
+	height: 165px;
+	object-fit: cover;
+	
+}
 

@@ -90,7 +90,7 @@
                <li><a href="{{route('home.page')}}">Priging</a></li>
                <li><a href="{{route('home.page')}}">Team</a></li>
                <li><a href="{{route('home.page')}}">Our-Client</a></li>
-               <li><a href="{{route('home.page')}}">Contact-Us</a></li>
+               <li><a href="{{route('contact.page')}}">Contact-Us</a></li>
               {{-- <li class="has-submenu">
                 <a href="#">Blog</a>
                 <ul class="submenu">

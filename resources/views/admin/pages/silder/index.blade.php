@@ -94,7 +94,7 @@
                         <input name="photo" style="display: none" type="file" class="form-control" id="slider-photo">
                        
                         <label for="slider-photo">
-                            <img style="width: 100px; cursor:pointer;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2-ndncY4T3fxrZtvIzRderLgyRkzJGbALoZc5zuE8zg&s" alt="">
+                            <img style="width: 100px; cursor:pointer;" src="{{url('storage/admins/images.png')}}" alt="">
                         </label>
                     </div>
                     <div class="form-group slider-btn-otp">

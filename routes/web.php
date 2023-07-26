@@ -7,8 +7,11 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ClientsController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactsController;
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminPageController;
+use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Frontend\FrontendPagesController;
@@ -51,15 +54,24 @@ Route::group(['middleware' => 'admin'], function(){
     
     //slider resource  route 
     Route::resource('/slider', SliderController::class);
-    Route::get('slider/status/update/{id}', [SliderController::class, 'StatusUpdateSlider']) -> name('slider.status.update');
+    Route::get('/slider/status/update/{id}', [SliderController::class, 'StatusUpdateSlider']) -> name('slider.status.update');
     //testimonials resource route
     Route::resource('/testimonial', TestimonialController::class);
-    Route::get('testimonia/status/update/{id}', [TestimonialController::class, 'StatusUpdatetesTimonial']) -> name('testimonial.status.update');
+    Route::get('/testimonia/status/update/{id}', [TestimonialController::class, 'StatusUpdatetesTimonial']) -> name('testimonial.status.update');
     //clients route 
     Route::resource('/client', ClientsController::class);
-    Route::get('client/status/update/{id}', [ClientsController::class, 'StatusUpdatetesClient']) -> name('client.status.update');
+    Route::get('/client/status/update/{id}', [ClientsController::class, 'StatusUpdatetesClient']) -> name('client.status.update');
+    //contact route
+    Route::resource('/contacts', ContactsController::class);
+    //category route 
+    Route::resource('/categorys', CategoryController::class);
+    Route::get('/categorys/status/update/{id}', [CategoryController::class, 'CategoryUpdatetesClient']) -> name('cetagory.status.update');
+    
+    //protfolio route 
+    Route::resource('/portflio', PortfolioController::class);
 
 });
 
 //frontend page controllers 
 Route::get('/', [FrontendPagesController::class, 'HomePages']) -> name('home.page');
+Route::get('/contact', [FrontendPagesController::class, 'ContactPages']) -> name('contact.page');

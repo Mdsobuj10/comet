@@ -1,12 +1,15 @@
 @extends('comet.layouts.app')
 
+
+@section('frontend-main')
+
     <!-- Home Section-->
     <section id="home">
         <!-- Home Slider-->
         <div id="home-slider" class="flexslider">
           <ul class="slides">
             @php
-              $silders =App\Models\Slider:: where('status', true) -> latest() -> get();
+              $silders =App\Models\Slider:: where('status', true) -> latest()  -> get();
             @endphp
             @foreach ( $silders as  $silders )
            
@@ -44,3 +47,4 @@
 @include('comet.pages.sections.clients')
 @include('comet.pages.sections.testimonials')
 @include('comet.pages.sections.blog')
+@endsection

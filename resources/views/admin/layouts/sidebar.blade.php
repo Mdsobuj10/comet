@@ -25,10 +25,24 @@
                     </li>
                     @endif
                     @if (in_array('Portflio', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
+                    <li class="submenu">
+                        <a href="#"><i class="fe fe-document"></i> <span>Portflio</span> <span class="menu-arrow"></span></a>
+                        <ul style="display: none;">
+                            <li><a href="{{route('portflio.index')}}"> Portflio</a></li>
+                            <li><a href="{{route('categorys.index')}}">Category</a></li>
+                        </ul>
+                    </li>
+                    @endif
+                    @if (in_array('Contact', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
+                    <li class=""> 
+                        <a href="{{route('contacts.index')}}"><i class="fe fe-home"></i> <span>Contact</span></a>
+                    </li>
+                    @endif
+                    {{-- @if (in_array('Portflio', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
                     <li class=""> 
                         <a href="#"><i class="fe fe-home"></i> <span>Portflio</span></a>
                     </li>
-                    @endif
+                    @endif --}}
                     @if (in_array('Posts', json_decode(Auth::guard('admin') -> user() -> role -> permission) ))  
                     <li class="submenu">
                         <a href="#"><i class="fe fe-document"></i> <span>Posts</span> <span class="menu-arrow"></span></a>
